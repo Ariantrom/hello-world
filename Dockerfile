@@ -4,6 +4,6 @@ RUN mkdir /code
 
 WORKDIR /code
 
-COPY ./target/example.smallest-0.0.1-SNAPSHOT.war /code
+COPY ./target/*.war /code/hello-world.war
 
-CMD ["/usr/bin/java", "-jar", "example.smallest-0.0.1-SNAPSHOT.war"]
+CMD ["/usr/bin/java", "-jar", "hello-world.war"]
