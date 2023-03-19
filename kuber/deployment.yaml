@@ -17,7 +17,7 @@ spec:
       containers:
       - name: hello
         image: ariantrom/hello-world
-                livenessProbe:
+        livenessProbe:
           failureThreshold: 5
           httpGet:
             path: /actuator/health
