@@ -17,5 +17,25 @@ spec:
       containers:
       - name: hello
         image: ariantrom/hello-world
+                livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /actuator/health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 50
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 10
+        readinessProbe:
+          failureThreshold: 50
+          httpGet:
+            path: /actuator/health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 10
         ports:
         - containerPort: 8080
