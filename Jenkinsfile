@@ -28,7 +28,7 @@ pipeline {
         }
         stage ('deploy') {
             steps {
-                sh 'kubectl create ns test-hello ; kubectl apply -f kuber/deployment.yaml -f kuber/ingress.yaml -f kuber/service.yaml'
+                sh 'kubectl create ns test-hello & kubectl apply -f kuber/deployment.yaml -f kuber/ingress.yaml -f kuber/service.yaml'
             }
         }
     }
