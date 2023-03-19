@@ -26,5 +26,10 @@ pipeline {
                 sh 'docker push ariantrom/hello-world'
             }
         }
+        stage ('deploy') {
+            steps {
+                sh 'kubectl create ns test-hello && kubectl apply -n test-hello -f kuber/deployment.yaml -f kuber/ingress.yaml -f kuber/service.yaml'
+            }
+        }
     }
 }
