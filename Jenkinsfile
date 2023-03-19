@@ -13,7 +13,9 @@ pipeline {
             }
         }
         stage ('build docker image') {
-            sh 'docker build -t hello-world .'
+            steps {
+                sh 'docker build -t hello-world .'
+            }
         }
     }
 }
