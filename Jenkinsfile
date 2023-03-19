@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('git clone') {
             steps {
-                git clone https://github.com/Ariantrom/hello-world.git
+                sh 'git clone https://github.com/Ariantrom/hello-world.git'
             }
         }
         stage ('build war') {
