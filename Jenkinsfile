@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('build docker image') {
             steps {
-                sh 'docker build -t ariantom/hello-world .'
+                sh 'docker build -t hello-world . && docker tag hello-world:latest ariantrom/hello-world:latest'
             }
         }
         stage ('docker login') {
